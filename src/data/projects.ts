@@ -43,6 +43,20 @@ export const projects: Project[] = [
 		gallery: ["/images/gtc-inventory.png", "/images/gtc-rothbank.png"],
 	},
 	{
+		slug: "codedefender",
+		title: "CodeDefender",
+		tag: "Software protection platform",
+		year: "Active",
+		role: "Co-founder · Back Engineering Labs",
+		blurb:
+			"Next-generation software protection &mdash; binary rewriting, novel obfuscation, anti-tamper, and program hardening that actually supports modern Windows security features (CET, CFG, ACG). Built from the ground up with stability first; the only protector that can rewrite ntoskrnl and Chromium without breaking them.",
+		stack: ["C++", "x64 binary rewriting", "PE tooling", "Anti-tamper", "LLVM / B.L.A.R.E."],
+		link: { label: "codedefender.io", href: "https://codedefender.io" },
+		accent: "cyan",
+		hero: "/images/codedefender-card.webp",
+		gallery: ["/images/codedefender-icon.png"],
+	},
+	{
 		slug: "oink-industries",
 		title: "oink.industries",
 		tag: "GMod tooling platform",
