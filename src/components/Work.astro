@@ -1,0 +1,19 @@
+---
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="work" class="px-6 max-w-6xl mx-auto py-24 md:py-32">
+	<div class="flex items-baseline justify-between gap-4 flex-wrap mb-12">
+		<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+			Selected work
+		</h2>
+		<p class="font-mono text-sm text-ink-dim">
+			{projects.length} projects · 2024 → present
+		</p>
+	</div>
+
+	<div class="grid gap-6">
+		{projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+	</div>
+</section>

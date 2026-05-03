@@ -1,0 +1,103 @@
+---
+import type { Project } from "../data/projects";
+interface Props {
+	project: Project;
+	index: number;
+}
+const { project, index } = Astro.props;
+const accentClass =
+	project.accent === "blood"
+		? "from-blood/30 to-blood/0"
+		: project.accent === "moss"
+			? "from-emerald-500/25 to-emerald-500/0"
+			: project.accent === "cyan"
+				? "from-cyan-400/30 to-cyan-400/0"
+				: "from-accent/30 to-accent/0";
+---
+
+<article
+	class="group relative bg-bg-card border border-[--color-stroke] rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5"
+>
+	<div class={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${accentClass}`}></div>
+
+	{
+		(project.hero || project.video) && (
+			<div class="relative aspect-video overflow-hidden bg-bg-soft">
+				{project.video ? (
+					<video
+						src={project.video}
+						poster={project.hero}
+						autoplay
+						loop
+						muted
+						playsinline
+						class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+					/>
+				) : (
+					<img
+						src={project.hero}
+						alt={project.title}
+						class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+						loading="lazy"
+					/>
+				)}
+				<div class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent pointer-events-none" />
+			</div>
+		)
+	}
+
+	<div class="p-8 md:p-10">
+		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-3">
+			<p class="font-mono text-xs text-ink-dim tracking-widest">
+				/ {String(index + 1).padStart(2, "0")} &mdash; {project.tag}
+			</p>
+			<p class="font-mono text-xs text-ink-dim">{project.year}</p>
+		</div>
+
+		<h3
+			class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 group-hover:text-accent transition-colors duration-300"
+		>
+			{project.title}
+		</h3>
+
+		<p class="text-sm text-accent/90 font-mono mb-5">{project.role}</p>
+
+		<p class="text-ink-dim leading-relaxed text-base md:text-lg max-w-2xl" set:html={project.blurb}></p>
+
+		<div class="mt-7 flex flex-wrap gap-2">
+			{
+				project.stack.map((s) => (
+					<span class="text-xs px-3 py-1 rounded-full bg-bg-soft border border-[--color-stroke] text-ink-dim font-mono">
+						{s}
+					</span>
+				))
+			}
+		</div>
+
+		{
+			project.gallery && project.gallery.length > 0 && (
+				<div class="mt-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+					{project.gallery.map((src) => (
+						<div class="aspect-video rounded-lg overflow-hidden bg-bg-soft border border-[--color-stroke]">
+							<img src={src} alt="" loading="lazy" class="w-full h-full object-cover" />
+						</div>
+					))}
+				</div>
+			)
+		}
+
+		{
+			project.link && (
+				<a
+					href={project.link.href}
+					target="_blank"
+					rel="noopener"
+					class="inline-flex items-center gap-2 mt-7 text-accent hover:text-accent-deep transition group/link"
+				>
+					{project.link.label}
+					<span class="transition-transform group-hover/link:translate-x-1">→</span>
+				</a>
+			)
+		}
+	</div>
+</article>
