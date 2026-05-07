@@ -3,188 +3,163 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<title>nsa.gov / IDontCode - roblox scripter</title>
+<meta name="color-scheme" content="light">
+<title>nsa.gov / IDontCode — roblox scripter</title>
 <meta name="description" content="roblox scripter. luau, roblox-ts, anti-cheat. discord mmmapiospace.">
 <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="public/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="scrim" id="scrim" hidden></div>
-<div class="window" role="application" aria-label="idontcode portfolio editor">
+<a class="skip" href="#main">skip to content</a>
 
-  <!-- titlebar: window chrome -->
-  <header class="titlebar">
-    <div class="dots" aria-hidden="true">
-      <span class="dot dot-r"></span>
-      <span class="dot dot-y"></span>
-      <span class="dot dot-g"></span>
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">nsa.gov</span>
+    <span class="brand-sep">/</span>
+    <span class="brand-handle">IDontCode</span>
+  </a>
+  <nav class="topnav" aria-label="primary">
+    <a href="#about">about</a>
+    <a href="#stack">stack</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<div class="layout" id="top">
+
+  <aside class="rail" aria-label="section navigation">
+    <ol class="rail-list">
+      <li><a href="#intro" data-section="intro"><span class="rail-num">01</span><span class="rail-name">intro</span></a></li>
+      <li><a href="#about" data-section="about"><span class="rail-num">02</span><span class="rail-name">about</span></a></li>
+      <li><a href="#stack" data-section="stack"><span class="rail-num">03</span><span class="rail-name">stack</span></a></li>
+      <li><a href="#projects" data-section="projects"><span class="rail-num">04</span><span class="rail-name">projects</span></a></li>
+      <li><a href="#contact" data-section="contact"><span class="rail-num">05</span><span class="rail-name">contact</span></a></li>
+    </ol>
+    <div class="rail-foot">
+      <div><span>node</span><span>22</span></div>
+      <div><span>luau</span><span>strict</span></div>
+      <div><span>typescript</span><span>5.x</span></div>
     </div>
-    <div class="title">~/idontcode - portfolio.code-workspace</div>
-    <button class="explorer-toggle" aria-label="toggle file explorer" aria-controls="explorer" aria-expanded="false">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-        <path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/>
-      </svg>
-    </button>
-  </header>
+  </aside>
 
-  <div class="workbench">
+  <main id="main" class="content">
 
-    <!-- left sidebar: file explorer -->
-    <aside class="explorer" id="explorer">
-      <div class="explorer-head">EXPLORER</div>
-      <nav class="tree" aria-label="files">
-        <div class="tree-section">
-          <button class="tree-row tree-folder open" aria-expanded="true">
-            <span class="caret">▾</span><span class="folder">portfolio</span>
-          </button>
-          <ul class="tree-children">
-            <li><a class="tree-row file" href="#readme" data-target="readme"><span class="ico md"></span>readme.md</a></li>
-            <li><a class="tree-row file" href="#about" data-target="about"><span class="ico md"></span>about.md</a></li>
-            <li><a class="tree-row file" href="#stack" data-target="stack"><span class="ico md"></span>stack.md</a></li>
+    <!-- INTRO -->
+    <section id="intro" class="section section-intro">
+      <p class="eyebrow">portfolio · 2026</p>
+      <h1 class="display">
+        roblox scripter,<br>
+        reverse engineer,<br>
+        builder of weird things.
+      </h1>
 
-            <li>
-              <button class="tree-row tree-folder open" aria-expanded="true">
-                <span class="caret">▾</span><span class="folder">projects</span>
-              </button>
-              <ul class="tree-children">
-                <li><a class="tree-row file" href="#primal-islands"   data-target="primal-islands"><span class="ico md"></span>primal-islands.md</a></li>
-                <li><a class="tree-row file" href="#grand-theft-city" data-target="grand-theft-city"><span class="ico md"></span>grand-theft-city.md</a></li>
-                <li><a class="tree-row file" href="#codedefender"     data-target="codedefender"><span class="ico md"></span>codedefender.md</a></li>
-                <li><a class="tree-row file" href="#oink"             data-target="oink"><span class="ico md"></span>oink.industries.md</a></li>
-                <li><a class="tree-row file" href="#paradox"          data-target="paradox"><span class="ico md"></span>paradox-networks.md</a></li>
-                <li><a class="tree-row file" href="#research"         data-target="research"><span class="ico md"></span>research.md</a></li>
-              </ul>
-            </li>
+      <p class="lede">
+        i'm a roblox scripter. i take commission work and longer-term partnerships. been
+        writing code for about five years. most of that was C, C++, and x64 assembly doing
+        kernel internals and reverse engineering. picked up luau a year and a half ago and
+        stuck with it because i can ship a whole game by myself.
+      </p>
 
-            <li><a class="tree-row file" href="#contact" data-target="contact"><span class="ico md"></span>contact.md</a></li>
-          </ul>
-        </div>
-      </nav>
+      <p class="lede">
+        most roblox scripters have never opened a debugger or read a stack trace from a kernel
+        crash. i have. so when your game has a desync nobody can repro, or a datastore corrupts
+        on a yield, i can usually figure out what's actually wrong instead of guessing.
+      </p>
 
-      <div class="explorer-foot">
-        <div class="env-row"><span>node</span><span>22</span></div>
-        <div class="env-row"><span>luau</span><span>strict</span></div>
-        <div class="env-row"><span>typescript</span><span>5.x</span></div>
+      <ul class="chips">
+        <li>
+          <a class="chip primary" href="https://discord.com/users/mmmapiospace" target="_blank" rel="noopener">
+            <span class="chip-k">discord</span><span class="chip-v">mmmapiospace</span>
+          </a>
+        </li>
+        <li>
+          <a class="chip" href="https://www.unknowncheats.me/forum/members/3543704.html" target="_blank" rel="noopener">
+            <span class="chip-k">UC</span><span class="chip-v">unknowncheats.me</span>
+          </a>
+        </li>
+        <li>
+          <a class="chip" href="https://github.com/OfficalIDontCode" target="_blank" rel="noopener">
+            <span class="chip-k">github</span><span class="chip-v">OfficalIDontCode</span>
+          </a>
+        </li>
+        <li>
+          <a class="chip" href="https://www.roblox.com/games/106754741049599" target="_blank" rel="noopener">
+            <span class="chip-k">roblox</span><span class="chip-v">primal islands</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="h2">about</h2>
+      </header>
+
+      <div class="prose">
+        <p>
+          i started on C and assembly. first real project was a windows kernel driver, badly
+          written, that bluescreened my pc maybe forty times before it loaded once. i was
+          hooked. spent the next few years reading other people's code and trying to figure
+          out how anti-cheats worked.
+        </p>
+
+        <p>
+          reverse engineering taught me to look at software the way attackers do. that's still
+          the lens i use. when i write game code i'm thinking about exploits, race conditions,
+          what happens if a player's framerate drops to zero mid-action. it's not paranoia, it's
+          just where my brain goes by default now.
+        </p>
+
+        <p>
+          i moved to roblox because i wanted to build whole games on my own. luau is fast, the
+          engine is solid, the userbase is huge, and tooling like rojo and roblox-ts let me
+          work the way i want to work. i've been on it about a year and a half. paid commissions
+          most of that time.
+        </p>
+
+        <p>
+          i answer fast and i don't drop projects. if you want to know what i can do, the
+          projects below are real things real people use.
+        </p>
       </div>
-    </aside>
+    </section>
 
-    <!-- editor area -->
-    <main class="editor">
+    <hr class="rule">
 
-      <!-- tab strip -->
-      <div class="tabbar" role="tablist" aria-label="open files">
-        <a class="tab active" href="#readme" data-target="readme"><span class="ico md"></span>readme.md<span class="close">×</span></a>
-        <a class="tab"        href="#about"  data-target="about"><span class="ico md"></span>about.md<span class="close">×</span></a>
-        <a class="tab"        href="#stack"  data-target="stack"><span class="ico md"></span>stack.md<span class="close">×</span></a>
-        <a class="tab"        href="#primal-islands" data-target="primal-islands"><span class="ico md"></span>primal-islands.md<span class="close">×</span></a>
-        <a class="tab"        href="#contact" data-target="contact"><span class="ico md"></span>contact.md<span class="close">×</span></a>
+    <!-- STACK -->
+    <section id="stack" class="section">
+      <header class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="h2">stack</h2>
+      </header>
+
+      <div class="prose">
+        <p>
+          mostly strict luau with rojo and knit. for typed work i use roblox-ts with flamework
+          and a react HUD (primal islands runs on this). data is profileservice with a
+          session-locked layer i wrote on top to handle the dumb edge cases.
+        </p>
+
+        <p>
+          for lower-level stuff it's C, C++, and x64 asm. i live in IDA and ghidra and have
+          read more of the windows kernel source than is probably healthy. on the backend side
+          i've shipped MySQL, redis, stripe, and a custom HTTP API for oink that handles
+          millions of sessions across live communities.
+        </p>
       </div>
 
-      <!-- content scroll area -->
-      <div class="scroll" id="scroll">
-
-        <!-- README -->
-        <section id="readme" class="doc">
-          <div class="filehdr">
-            <span class="path">~/portfolio/readme.md</span>
-            <span class="meta">UTF-8 · LF · Markdown</span>
-          </div>
-
-          <h1 class="h1"><span class="hash">#</span> nsa.gov / IDontCode</h1>
-
-          <p class="lede">
-            i'm a roblox scripter. i take commission work and longer-term partnerships. been
-            writing code for about five years. most of that was C, C++, and x64 assembly doing
-            kernel internals and reverse engineering. picked up luau a year and a half ago and
-            stuck with it because i can ship a whole game by myself.
-          </p>
-
-          <p class="lede">
-            most roblox scripters have never opened a debugger or read a stack trace from a kernel
-            crash. i have. so when your game has a desync nobody can repro, or a datastore corrupts
-            on a yield, i can usually figure out what's actually wrong instead of guessing.
-          </p>
-
-          <div class="quickrow">
-            <a class="chip primary" href="https://discord.com/users/mmmapiospace" target="_blank" rel="noopener">
-              <span class="chip-k">discord</span><span class="chip-v">mmmapiospace</span>
-            </a>
-            <a class="chip" href="https://www.unknowncheats.me/forum/members/3543704.html" target="_blank" rel="noopener">
-              <span class="chip-k">UC</span><span class="chip-v">unknowncheats.me</span>
-            </a>
-            <a class="chip" href="https://github.com/OfficalIDontCode" target="_blank" rel="noopener">
-              <span class="chip-k">github</span><span class="chip-v">OfficalIDontCode</span>
-            </a>
-            <a class="chip" href="https://www.roblox.com/games/106754741049599" target="_blank" rel="noopener">
-              <span class="chip-k">roblox</span><span class="chip-v">primal islands</span>
-            </a>
-          </div>
-
-          <p class="cmt">// scroll, or pick a file from the sidebar.</p>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="doc">
-          <div class="filehdr">
-            <span class="path">~/portfolio/about.md</span>
-            <span class="meta">UTF-8 · LF · Markdown</span>
-          </div>
-
-          <h2 class="h2"><span class="hash">##</span> about</h2>
-
-          <p>
-            i started on C and assembly. first real project was a windows kernel driver, badly
-            written, that bluescreened my pc maybe forty times before it loaded once. i was
-            hooked. spent the next few years reading other people's code and trying to figure
-            out how anti-cheats worked.
-          </p>
-
-          <p>
-            reverse engineering taught me to look at software the way attackers do. that's still
-            the lens i use. when i write game code i'm thinking about exploits, race conditions,
-            what happens if a player's framerate drops to zero mid-action. it's not paranoia, it's
-            just where my brain goes by default now.
-          </p>
-
-          <p>
-            i moved to roblox because i wanted to build whole games on my own. luau is fast, the
-            engine is solid, the userbase is huge, and tooling like rojo and roblox-ts let me
-            work the way i want to work. i've been on it about a year and a half. paid commissions
-            most of that time.
-          </p>
-
-          <p>
-            i answer fast and i don't drop projects. if you want to know what i can do, the
-            projects below are real things real people use.
-          </p>
-        </section>
-
-        <!-- STACK -->
-        <section id="stack" class="doc">
-          <div class="filehdr">
-            <span class="path">~/portfolio/stack.md</span>
-            <span class="meta">UTF-8 · LF · Markdown</span>
-          </div>
-
-          <h2 class="h2"><span class="hash">##</span> stack</h2>
-
-          <p>
-            mostly strict luau with rojo and knit. for typed work i use roblox-ts with flamework
-            and a react HUD (primal islands runs on this). data is profileservice with a
-            session-locked layer i wrote on top to handle the dumb edge cases.
-          </p>
-
-          <p>
-            for lower-level stuff it's C, C++, and x64 asm. i live in IDA and ghidra and have
-            read more of the windows kernel source than is probably healthy. on the backend side
-            i've shipped MySQL, redis, stripe, and a custom HTTP API for oink that handles
-            millions of sessions across live communities.
-          </p>
-
-          <pre class="code"><code><span class="c-key">local</span> <span class="c-fn">whoami</span> = {
+      <pre class="code"><code><span class="c-key">local</span> <span class="c-fn">whoami</span> = {
   <span class="c-prop">name</span>      = <span class="c-str">"nsa.gov"</span>,
   <span class="c-prop">handle</span>    = <span class="c-str">"IDontCode"</span>,
   <span class="c-prop">years</span>     = <span class="c-num">5</span>,
@@ -195,36 +170,36 @@
   <span class="c-prop">contact</span>   = <span class="c-str">"discord: mmmapiospace"</span>,
 }
 <span class="c-key">return</span> <span class="c-fn">whoami</span></code></pre>
-        </section>
+    </section>
 
-        <!-- PROJECTS -->
-        <section id="projects" class="doc">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/</span>
-            <span class="meta">6 files · sorted by recency</span>
+    <hr class="rule">
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <header class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="h2">projects</h2>
+        <p class="section-sub">the work. each one is a real thing in production or shipping soon.</p>
+      </header>
+
+      <!-- PRIMAL ISLANDS -->
+      <article id="primal-islands" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">primal islands</h3>
+            <p class="role">solo developer · systems lead</p>
           </div>
+          <p class="project-meta">roblox · 2026</p>
+        </header>
 
-          <h2 class="h2"><span class="hash">##</span> projects</h2>
-          <p class="cmt">// the work. each one is a real thing in production or shipping soon.</p>
-        </section>
+        <div class="media">
+          <video class="frame" controls preload="none" poster="public/images/primal-islands-hud.png" playsinline>
+            <source src="public/videos/preview-short.mp4" type="video/mp4">
+          </video>
+          <p class="caption">click to play. ~25mb so it won't autoplay.</p>
+        </div>
 
-        <!-- PRIMAL ISLANDS -->
-        <article id="primal-islands" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/primal-islands.md</span>
-            <span class="meta">roblox · 2026</span>
-          </div>
-
-          <h3 class="h3"><span class="hash">###</span> primal islands</h3>
-          <p class="role">role: solo developer, systems lead</p>
-
-          <div class="media">
-            <video class="frame" controls preload="none" poster="public/images/primal-islands-hud.png" playsinline>
-              <source src="public/videos/preview-short.mp4" type="video/mp4">
-            </video>
-            <p class="caption">// click to play. ~25mb so it won't autoplay.</p>
-          </div>
-
+        <div class="prose">
           <p>
             a survival sandbox. you spawn on procedural islands and have to gather, craft, and
             not die. built it in roblox-ts with flamework and a react-driven HUD. inventory and
@@ -239,41 +214,44 @@
             across yields and reconciles on rejoin. it's the single piece of code i'd port to
             every other game i make.
           </p>
+        </div>
 
-          <div class="gallery">
-            <a class="frame" href="public/images/primal-islands-stats.png" target="_blank">
-              <img loading="lazy" src="public/images/primal-islands-stats.png" alt="primal islands stats UI">
-            </a>
-            <a class="frame" href="public/images/primal-islands-3.png" target="_blank">
-              <img loading="lazy" src="public/images/primal-islands-3.png" alt="primal islands gameplay">
-            </a>
-          </div>
+        <div class="gallery cols-2">
+          <a class="frame" href="public/images/primal-islands-stats.png" target="_blank">
+            <img loading="lazy" src="public/images/primal-islands-stats.png" alt="primal islands stats UI">
+          </a>
+          <a class="frame" href="public/images/primal-islands-3.png" target="_blank">
+            <img loading="lazy" src="public/images/primal-islands-3.png" alt="primal islands gameplay">
+          </a>
+        </div>
 
+        <footer class="project-foot">
           <p class="links">
-            <a href="https://www.roblox.com/games/106754741049599" target="_blank" rel="noopener">→ play (beta)</a>
+            <a href="https://www.roblox.com/games/106754741049599" target="_blank" rel="noopener">play (beta) →</a>
           </p>
-
           <p class="stack-line">
-            <span class="kw">stack</span>: roblox-ts · flamework · @rbxts/react · profileservice · rojo
+            <span class="kw">stack</span> roblox-ts · flamework · @rbxts/react · profileservice · rojo
           </p>
-        </article>
+        </footer>
+      </article>
 
-        <!-- GRAND THEFT CITY -->
-        <article id="grand-theft-city" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/grand-theft-city.md</span>
-            <span class="meta">roblox · 2026</span>
+      <!-- GRAND THEFT CITY -->
+      <article id="grand-theft-city" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">grand theft city</h3>
+            <p class="role">solo developer</p>
           </div>
+          <p class="project-meta">roblox · 2026</p>
+        </header>
 
-          <h3 class="h3"><span class="hash">###</span> grand theft city</h3>
-          <p class="role">role: solo developer</p>
+        <div class="media">
+          <a class="frame wide" href="public/images/gtc-city.png" target="_blank">
+            <img loading="lazy" src="public/images/gtc-city.png" alt="grand theft city overview">
+          </a>
+        </div>
 
-          <div class="media single">
-            <a class="frame wide" href="public/images/gtc-city.png" target="_blank">
-              <img loading="lazy" src="public/images/gtc-city.png" alt="grand theft city overview">
-            </a>
-          </div>
-
+        <div class="prose">
           <p>
             open-world city RP. inventory and hotbar that survive death and rejoin (items don't
             wipe, items don't dupe), a banking system called RothBank with deposits and
@@ -287,37 +265,41 @@
             when the write returns. drag and drop never feels laggy because the UI doesn't
             wait on the network for the obvious cases.
           </p>
+        </div>
 
-          <div class="gallery">
-            <a class="frame" href="public/images/gtc-inventory.png" target="_blank">
-              <img loading="lazy" src="public/images/gtc-inventory.png" alt="gtc inventory UI">
-            </a>
-            <a class="frame" href="public/images/gtc-rothbank.png" target="_blank">
-              <img loading="lazy" src="public/images/gtc-rothbank.png" alt="rothbank ATM">
-            </a>
-          </div>
+        <div class="gallery cols-2">
+          <a class="frame" href="public/images/gtc-inventory.png" target="_blank">
+            <img loading="lazy" src="public/images/gtc-inventory.png" alt="gtc inventory UI">
+          </a>
+          <a class="frame" href="public/images/gtc-rothbank.png" target="_blank">
+            <img loading="lazy" src="public/images/gtc-rothbank.png" alt="rothbank ATM">
+          </a>
+        </div>
 
+        <footer class="project-foot">
           <p class="stack-line">
-            <span class="kw">stack</span>: roblox · custom inventory framework · rothbank ATM · datastore economy · custom UI
+            <span class="kw">stack</span> roblox · custom inventory framework · rothbank ATM · datastore economy · custom UI
           </p>
-        </article>
+        </footer>
+      </article>
 
-        <!-- CODEDEFENDER -->
-        <article id="codedefender" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/codedefender.md</span>
-            <span class="meta">software protection · active</span>
+      <!-- CODEDEFENDER -->
+      <article id="codedefender" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">codedefender</h3>
+            <p class="role">co-founder · back engineering labs</p>
           </div>
+          <p class="project-meta">software protection · active</p>
+        </header>
 
-          <h3 class="h3"><span class="hash">###</span> codedefender</h3>
-          <p class="role">role: co-founder, back engineering labs</p>
+        <div class="media">
+          <a class="frame wide" href="public/images/codedefender-card.webp" target="_blank">
+            <img loading="lazy" src="public/images/codedefender-card.webp" alt="codedefender">
+          </a>
+        </div>
 
-          <div class="media single">
-            <a class="frame wide" href="public/images/codedefender-card.webp" target="_blank">
-              <img loading="lazy" src="public/images/codedefender-card.webp" alt="codedefender">
-            </a>
-          </div>
-
+        <div class="prose">
           <p>
             a software protection platform i co-founded under back engineering labs. binary
             rewriting, novel obfuscation, anti-tamper, program hardening for windows binaries.
@@ -330,32 +312,35 @@
             without crashing them. that sounds like a flex but it's mostly the result of
             years of fixing weird edge cases in PE parsing and instrumentation. C++ and x64.
           </p>
+        </div>
 
+        <footer class="project-foot">
           <p class="links">
-            <a href="https://codedefender.io" target="_blank" rel="noopener">→ codedefender.io</a>
+            <a href="https://codedefender.io" target="_blank" rel="noopener">codedefender.io →</a>
           </p>
-
           <p class="stack-line">
-            <span class="kw">stack</span>: c++ · x64 binary rewriting · PE tooling · anti-tamper · llvm / B.L.A.R.E.
+            <span class="kw">stack</span> c++ · x64 binary rewriting · PE tooling · anti-tamper · llvm / B.L.A.R.E.
           </p>
-        </article>
+        </footer>
+      </article>
 
-        <!-- OINK -->
-        <article id="oink" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/oink.industries.md</span>
-            <span class="meta">gmod tooling · active</span>
+      <!-- OINK -->
+      <article id="oink" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">oink.industries</h3>
+            <p class="role">owner · engineer</p>
           </div>
+          <p class="project-meta">gmod tooling · active</p>
+        </header>
 
-          <h3 class="h3"><span class="hash">###</span> oink.industries</h3>
-          <p class="role">role: owner, engineer</p>
+        <div class="media">
+          <a class="frame wide" href="public/images/oink-hero.png" target="_blank">
+            <img loading="lazy" src="public/images/oink-hero.png" alt="oink industries">
+          </a>
+        </div>
 
-          <div class="media single">
-            <a class="frame wide" href="public/images/oink-hero.png" target="_blank">
-              <img loading="lazy" src="public/images/oink-hero.png" alt="oink industries">
-            </a>
-          </div>
-
+        <div class="prose">
           <p>
             a lua injector and tooling platform for garry's mod. auth, licensing, anti-tamper,
             a custom HTTP API. it's processed millions of sessions across live communities. GLua
@@ -368,71 +353,77 @@
             scene tries to break it and so far the design has held up. that's mostly because
             i was on the other side of that fight for years before i ever shipped a paid product.
           </p>
+        </div>
 
+        <footer class="project-foot">
           <p class="links">
-            <a href="https://oink.industries" target="_blank" rel="noopener">→ oink.industries</a>
+            <a href="https://oink.industries" target="_blank" rel="noopener">oink.industries →</a>
           </p>
-
           <p class="stack-line">
-            <span class="kw">stack</span>: glua · lua injection · mysql · redis · stripe · http api
+            <span class="kw">stack</span> glua · lua injection · mysql · redis · stripe · http api
           </p>
-        </article>
+        </footer>
+      </article>
 
-        <!-- PARADOX -->
-        <article id="paradox" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/paradox-networks.md</span>
-            <span class="meta">gmod · 2025–2026</span>
+      <!-- PARADOX -->
+      <article id="paradox" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">paradox networks · ww2rp</h3>
+            <p class="role">lead developer</p>
           </div>
+          <p class="project-meta">gmod · 2025–2026</p>
+        </header>
 
-          <h3 class="h3"><span class="hash">###</span> paradox networks &middot; ww2rp</h3>
-          <p class="role">role: lead developer</p>
+        <div class="media">
+          <a class="frame wide" href="public/images/ww2rp-2.png" target="_blank">
+            <img loading="lazy" src="public/images/ww2rp-2.png" alt="paradox networks loading screen">
+          </a>
+        </div>
 
-          <div class="media single">
-            <a class="frame wide" href="public/images/ww2rp-2.png" target="_blank">
-              <img loading="lazy" src="public/images/ww2rp-2.png" alt="paradox networks loading screen">
-            </a>
-          </div>
-
+        <div class="prose">
           <p>
             berlin, 1940. a structured political RP server in garry's mod. players make civilian
             characters first and earn into reich-aligned roles by progressing through narrative
             milestones, gated by IC events. faction system is custom. so are the IC dossier
             tools (Kennkarte papers, character bios) and the discord-bridged moderation tooling.
           </p>
+        </div>
 
-          <div class="gallery">
-            <a class="frame" href="public/images/ww2rp-3.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-3.png" alt="ww2rp character info"></a>
-            <a class="frame" href="public/images/ww2rp-4.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-4.png" alt="ww2rp Kennkarte papers"></a>
-            <a class="frame" href="public/images/ww2rp-5.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-5.png" alt="ww2rp wardrobe UI"></a>
-          </div>
+        <div class="gallery cols-3">
+          <a class="frame" href="public/images/ww2rp-3.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-3.png" alt="ww2rp character info"></a>
+          <a class="frame" href="public/images/ww2rp-4.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-4.png" alt="ww2rp Kennkarte papers"></a>
+          <a class="frame" href="public/images/ww2rp-5.png" target="_blank"><img loading="lazy" src="public/images/ww2rp-5.png" alt="ww2rp wardrobe UI"></a>
+        </div>
 
+        <footer class="project-foot">
           <p class="links">
-            <a href="https://discord.gg/7K8tQuMagB" target="_blank" rel="noopener">→ discord.gg/7K8tQuMagB</a>
+            <a href="https://discord.gg/7K8tQuMagB" target="_blank" rel="noopener">discord.gg/7K8tQuMagB →</a>
           </p>
-
           <p class="stack-line">
-            <span class="kw">stack</span>: glua · custom faction framework · discord-bridge admin tools
+            <span class="kw">stack</span> glua · custom faction framework · discord-bridge admin tools
           </p>
-        </article>
+        </footer>
+      </article>
 
-        <!-- RESEARCH -->
-        <article id="research" class="doc project">
-          <div class="filehdr">
-            <span class="path">~/portfolio/projects/research.md</span>
-            <span class="meta">independent · ongoing</span>
+      <!-- RESEARCH -->
+      <article id="research" class="project">
+        <header class="project-head">
+          <div>
+            <h3 class="h3">security research &amp; reverse engineering</h3>
+            <p class="role">researcher</p>
           </div>
+          <p class="project-meta">independent · ongoing</p>
+        </header>
 
-          <h3 class="h3"><span class="hash">###</span> security research &amp; reverse engineering</h3>
-          <p class="role">role: researcher</p>
+        <div class="gallery cols-4">
+          <a class="frame" href="public/images/re-1.png" target="_blank"><img loading="lazy" src="public/images/re-1.png" alt="reversing"></a>
+          <a class="frame" href="public/images/re-2.png" target="_blank"><img loading="lazy" src="public/images/re-2.png" alt="reversing"></a>
+          <a class="frame" href="public/images/re-3.png" target="_blank"><img loading="lazy" src="public/images/re-3.png" alt="reversing"></a>
+          <a class="frame" href="public/images/re-4.png" target="_blank"><img loading="lazy" src="public/images/re-4.png" alt="reversing"></a>
+        </div>
 
-          <div class="gallery">
-            <a class="frame" href="public/images/re-1.png" target="_blank"><img loading="lazy" src="public/images/re-1.png" alt="reversing"></a>
-            <a class="frame" href="public/images/re-2.png" target="_blank"><img loading="lazy" src="public/images/re-2.png" alt="reversing"></a>
-            <a class="frame" href="public/images/re-3.png" target="_blank"><img loading="lazy" src="public/images/re-3.png" alt="reversing"></a>
-            <a class="frame" href="public/images/re-4.png" target="_blank"><img loading="lazy" src="public/images/re-4.png" alt="reversing"></a>
-          </div>
-
+        <div class="prose">
           <p>
             reverse engineering, low-level binary analysis, anti-cheat work, applied offensive
             security on game-tooling targets. most of the output stays private but it's how i
@@ -445,68 +436,65 @@
             do illegal work, but i can audit your anti-cheat, find the holes, and tell you what
             an attacker would actually do.
           </p>
-
-          <p class="stack-line">
-            <span class="kw">stack</span>: c · c++ · x64 asm · ida / ghidra · x86-64 / arm64 · api hooking · frida
-          </p>
-        </article>
-
-        <!-- CONTACT -->
-        <section id="contact" class="doc">
-          <div class="filehdr">
-            <span class="path">~/portfolio/contact.md</span>
-            <span class="meta">UTF-8 · LF · Markdown</span>
-          </div>
-
-          <h2 class="h2"><span class="hash">##</span> contact</h2>
-
-          <p>
-            discord is the fastest. i check it every few hours. i don't use forms.
-          </p>
-
-          <ul class="contact-list">
-            <li>
-              <span class="ck">discord</span>
-              <a href="https://discord.com/users/mmmapiospace" target="_blank" rel="noopener">mmmapiospace</a>
-            </li>
-            <li>
-              <span class="ck">UC</span>
-              <a href="https://www.unknowncheats.me/forum/members/3543704.html" target="_blank" rel="noopener">unknowncheats.me/forum/members/3543704</a>
-            </li>
-            <li>
-              <span class="ck">github</span>
-              <a href="https://github.com/OfficalIDontCode" target="_blank" rel="noopener">github.com/OfficalIDontCode</a>
-            </li>
-          </ul>
-
-          <p class="cmt">// open to commission work, retained partnerships, anti-cheat audits.</p>
-          <p class="cmt">// not open to anything illegal. don't ask.</p>
-        </section>
-
-        <div class="eof">
-          <span>EOF</span>
         </div>
 
-      </div><!-- /scroll -->
+        <footer class="project-foot">
+          <p class="stack-line">
+            <span class="kw">stack</span> c · c++ · x64 asm · ida / ghidra · x86-64 / arm64 · api hooking · frida
+          </p>
+        </footer>
+      </article>
+    </section>
 
-    </main>
-  </div>
+    <hr class="rule">
 
-  <!-- status bar -->
-  <footer class="statusbar">
-    <div class="status-left">
-      <span class="branch">⎇ main</span>
-      <span class="ok">●</span>
-      <span class="muted">nsa.gov@idontcode</span>
-    </div>
-    <div class="status-right">
-      <span><span class="muted">discord:</span> mmmapiospace</span>
-      <span><span class="muted">UC:</span> 3543704</span>
-      <span><span class="muted">github:</span> OfficalIDontCode</span>
-    </div>
-  </footer>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <header class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="h2">contact</h2>
+      </header>
 
+      <div class="prose">
+        <p>discord is the fastest. i check it every few hours. i don't use forms.</p>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <span class="ck">discord</span>
+          <a href="https://discord.com/users/mmmapiospace" target="_blank" rel="noopener">mmmapiospace</a>
+        </li>
+        <li>
+          <span class="ck">UC</span>
+          <a href="https://www.unknowncheats.me/forum/members/3543704.html" target="_blank" rel="noopener">unknowncheats.me/forum/members/3543704</a>
+        </li>
+        <li>
+          <span class="ck">github</span>
+          <a href="https://github.com/OfficalIDontCode" target="_blank" rel="noopener">github.com/OfficalIDontCode</a>
+        </li>
+      </ul>
+
+      <div class="contact-notes">
+        <p>open to commission work, retained partnerships, anti-cheat audits.</p>
+        <p>not open to anything illegal. don't ask.</p>
+      </div>
+    </section>
+
+  </main>
 </div>
+
+<footer class="bottombar">
+  <div class="bb-left">
+    <span>nsa.gov / IDontCode</span>
+    <span class="dot-sep" aria-hidden="true">·</span>
+    <span>built by hand</span>
+  </div>
+  <div class="bb-right">
+    <a href="https://discord.com/users/mmmapiospace" target="_blank" rel="noopener">discord</a>
+    <a href="https://www.unknowncheats.me/forum/members/3543704.html" target="_blank" rel="noopener">UC</a>
+    <a href="https://github.com/OfficalIDontCode" target="_blank" rel="noopener">github</a>
+  </div>
+</footer>
 
 <script src="script.js" defer></script>
 </body>
