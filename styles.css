@@ -345,44 +345,12 @@ main, header.hud, .hex-foot { position: relative; z-index: 3; }
 }
 .hero-meta .m-v:hover { color: var(--signal); border-color: var(--signal); }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 28px;
-  right: var(--shell-pad);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-.scroll-bar {
-  position: relative;
-  width: 1px; height: 48px;
-  background: var(--line-2);
-  overflow: hidden;
-}
-.scroll-tip {
-  position: absolute; left: 0; top: -50%;
-  width: 1px; height: 50%;
-  background: var(--signal);
-  animation: scrollDrop 1.8s var(--ease) infinite;
-}
-@keyframes scrollDrop {
-  0%   { top: -50%; }
-  60%  { top: 100%; }
-  100% { top: 100%; }
-}
-
 @media (max-width: 720px) {
   .hero { padding: 110px 22px 60px; }
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
   .hero-meta > div:nth-child(2) { border-right: 0; }
   .hero-meta > div:nth-child(1),
   .hero-meta > div:nth-child(2) { border-bottom: 1px solid var(--line); }
-  .hero-scroll { right: 22px; bottom: 18px; }
 }
 
 /* ============================================================================

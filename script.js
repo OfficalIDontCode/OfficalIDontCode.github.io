@@ -1,9 +1,9 @@
 /* ============================================================================
    nsa.gov / IDontCode — script
-   - Lenis: inertial smooth scroll, synced with GSAP ScrollTrigger
-   - GSAP: scroll-triggered reveals, hud nav active state, hero parallax
    - WebGL: animated grid + scanline shader on the hero canvas
-   - DOM: custom crosshair cursor, hex-footer clock, headline letter split
+   - DOM: custom crosshair cursor, scroll-spy nav, paragraph reveals,
+          hero parallax, live UTC clock
+   - native scroll: no smooth-scroll lib (browser handles wheel/keys)
    ============================================================================ */
 
 (() => {
@@ -12,42 +12,6 @@
   const reduceMotion =
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* -------------------------------------------------------------------------
-     1. lenis smooth scroll, hooked into gsap ticker
-     ----------------------------------------------------------------------- */
-  let lenis = null;
-  if (window.Lenis && !reduceMotion) {
-    lenis = new window.Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.4,
-    });
-
-    if (window.gsap && window.ScrollTrigger) {
-      lenis.on('scroll', window.ScrollTrigger.update);
-      window.gsap.ticker.add((t) => lenis.raf(t * 1000));
-      window.gsap.ticker.lagSmoothing(0);
-    } else {
-      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
-  }
-
-  // anchor links → lenis scrollTo
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    const id = a.getAttribute('href');
-    if (id.length < 2) return;
-    const el = document.querySelector(id);
-    if (!el) return;
-    e.preventDefault();
-    if (lenis) lenis.scrollTo(el, { offset: -40, duration: 1.2 });
-    else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
 
   /* -------------------------------------------------------------------------
      2. data-reveal — fade/translate paragraphs on enter
